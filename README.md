@@ -8,5 +8,11 @@
 3. 개인 DB에 임시 테이블 생성하여 데이터 불러오기
 
 
+
 ## Site Photo
-<img width="1280" alt="image" src="https://user-images.githubusercontent.com/71093890/222377417-d883712d-f796-41ec-a3fc-07f21113a29f.png">
+<h3 align = 'center'>Main Page</h3>
+<img width="1280" alt="image" src="https://user-images.githubusercontent.com/71093890/222377185-f6c26004-a162-4a75-a13c-8bddb258ad0c.png">
+<h3 align = 'center'>Login Fail</h3>
+<img width="1280" alt="image" src="https://user-images.githubusercontent.com/71093890/222654748-88ecd8f1-d7c1-425e-8b18-e437c44c99cd.png">
+<h3 align = 'center'>Login Success</h3>
+<img width="1280" alt="image" src="https://user-images.githubusercontent.com/71093890/222655077-de58d845-dd11-4bb5-b4e7-f516d0d90f9e.png">
