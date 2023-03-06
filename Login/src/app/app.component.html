@@ -4,8 +4,7 @@
       <br>
       <br>
       <br>
-
-      <form class="form-signin" (ngSubmit)="login()">
+      <form class="form-signin">
         <img class="mb-4" src="https://avatars.githubusercontent.com/u/71093890?v=4/img.jpg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Username">
@@ -15,9 +14,10 @@
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" (click)="login()">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" (click)="openModal()">Sign up</button>
       </form>
-
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

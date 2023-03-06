@@ -10,9 +10,8 @@ namespace API.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=adminkitty.iptime.org;database=test;user=kitty;password=?");
+            optionsBuilder.UseMySql("server=adminkitty.iptime.org;database=test;user=kitty;password=??");
         }
     }
 }
-
 

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { SHA256 } from 'crypto-js';
+import { PopupComponent } from './popup/popup.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +15,15 @@ export class AppComponent {
   title = 'Login';
   username: string='';
   password: string='';
+  constructor(
+    private http: HttpClient,
+    private modalService: NgbModal,
+    private router: Router
+    ){};
 
-  constructor(private http: HttpClient) {}
+  openModal() {
+    const modalRef = this.modalService.open(PopupComponent);
+  }
 
   login(): void {
     const headers = new HttpHeaders({
@@ -34,6 +44,17 @@ export class AppComponent {
   (response) => {
     // 로그인 성공
     alert("Login Success")
+    var a = document.querySelectorAll('input');
+    a[0].remove()
+    a[1].remove()
+    var b = document.querySelectorAll('button');
+    b[0].remove()
+    b[1].remove()
+    var c = document.querySelectorAll('label');
+    c[0].remove()
+    var d = document.querySelectorAll('h1');
+    d[0].remove()
+    this.router.navigate(['/success']);
   },
   (error) => {
     // 로그인 실패
