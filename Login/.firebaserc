@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "my-cart-1234"
+  },
+  "targets": {
+    "my-cart-1234": {
+      "hosting": {
+        "Login": [
+          "my-cart-1234"
+        ]
+      }
+    }
+  }
+}

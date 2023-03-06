@@ -13,7 +13,7 @@ export class PopupComponent {
   password: string = '';
 
   constructor(public activeModal: NgbActiveModal, private http: HttpClient) {}
-    signup(): void {
+    async signup() {
       const headers = new HttpHeaders({
         'Content-Type': 'application/json'
       });
@@ -27,18 +27,15 @@ export class PopupComponent {
         PW : hash_pw
       });
       console.log(body)
-      this.http.post<any>('http://34.83.84.11/api/signup', body, { headers: headers, observe: 'response' }).subscribe(
-        (response) => {
-            // 성공적인 응답 처리
-            alert("Signup Success");
-            this.activeModal.close();
-        },
-        (error) => {
+      try{
+      const response = await this.http.post<any>('https://34.83.84.11:443/api/signup', body, { headers: headers, observe: 'response' }).toPromise();
+          alert("Signup Success");
+          this.activeModal.close();
+        }catch(error) {
           // 요청 실패 처리
           console.log("ID 중복")
           console.log('Request Error:', error);
           alert('이미 있는 ID');
         }
-      );
     }
   }

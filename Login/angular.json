@@ -25,10 +25,12 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"            ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js",
-            "node_modules/@popperjs/core/dist/umd/popper.min.js"
-          ]
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,10 +90,22 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"            ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js",
-            "node_modules/@popperjs/core/dist/umd/popper.min.js"
-          ]
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js"
+            ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Login:build:production",
+            "firebaseProject": "my-cart-1234",
+            "firebaseHostingSite": "my-cart-1234"
           }
         }
       }

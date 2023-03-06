@@ -25,7 +25,7 @@ export class AppComponent {
     const modalRef = this.modalService.open(PopupComponent);
   }
 
-  login(): void {
+  async login() {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
   });
@@ -39,10 +39,8 @@ export class AppComponent {
       "PW": hash_pw
     });
     console.log(body)
-
-    this.http.post<any>('http://34.83.84.11/api/login', body,{headers: headers}).subscribe(
-  (response) => {
-    // 로그인 성공
+    try{
+    const response = await this.http.post<any>('https://34.83.84.11:443/api/login', body, { headers: headers }).toPromise();
     alert("Login Success")
     var a = document.querySelectorAll('input');
     a[0].remove()
@@ -55,12 +53,10 @@ export class AppComponent {
     var d = document.querySelectorAll('h1');
     d[0].remove()
     this.router.navigate(['/success']);
-  },
-  (error) => {
+  }
+  catch(error)  {
     // 로그인 실패
     alert("Login Fail")
   }
-);
-
   }
 }
