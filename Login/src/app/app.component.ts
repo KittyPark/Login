@@ -40,7 +40,7 @@ export class AppComponent {
     });
     console.log(body)
 
-    this.http.post<any>('https://localhost:5001/api/login', body,{headers: headers}).subscribe(
+    this.http.post<any>('http://34.83.84.11/api/login', body,{headers: headers}).subscribe(
   (response) => {
     // 로그인 성공
     alert("Login Success")

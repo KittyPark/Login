@@ -27,7 +27,7 @@ export class PopupComponent {
         PW : hash_pw
       });
       console.log(body)
-      this.http.post<any>('https://localhost:5001/api/signup', body, { headers: headers, observe: 'response' }).subscribe(
+      this.http.post<any>('http://34.83.84.11/api/signup', body, { headers: headers, observe: 'response' }).subscribe(
         (response) => {
             // 성공적인 응답 처리
             alert("Signup Success");
